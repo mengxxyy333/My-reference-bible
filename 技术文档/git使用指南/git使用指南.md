@@ -197,3 +197,61 @@ git push -u origin main
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
+## 五、一些其他问题
+
+### 1、遇到不同系统提交相同文件时，换行符转换问题，git通常会提示：
+
+```
+warning: in the working copy of '技术文档/Sublime Text配置C++竞赛环境/Sublime Text配置C++.md', LF will be replaced by CRLF the next time Git touches it
+```
+
+​	这个问题是mac和windows之间换行符格式不一致的问题，可以禁用自动转换：
+
+```
+# 全局禁用换行符自动转换
+git config --global core.autocrlf false
+
+# 或者只对当前仓库禁用
+git config core.autocrlf false
+```
+
+​	但是这里我们其实需要它的自动转换功能，所以这样做：
+
+​	在项目根目录（也就是我们可以看到.git所在那个状态），新建一个文件：.gitattributes.txt。内容如下：
+
+```
+# 自动检测文本文件并进行换行符转换
+* text=auto
+
+# 明确指定某些文件类型为文本
+*.md text
+*.cpp text
+*.h text
+*.txt text
+*.json text
+*.yml text
+*.yaml text
+
+# 二进制文件不转换
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary
+```
+
+​	这样就可以解决了。如果还有后续一些转换问题，尝试重新规范化：
+
+```
+# 保存当前更改
+git stash
+
+# 重新规范化所有文件
+git add --renormalize .
+
+# 恢复更改
+git stash pop
+
+# 重新添加
+git add .
+```
+
