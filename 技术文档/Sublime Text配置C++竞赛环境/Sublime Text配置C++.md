@@ -1,10 +1,12 @@
 # Sublime Text配置C++
 
+*注：本文仅对应windows系统。*
+
 ​	1、官网下载Sublime Text：https://www.sublimetext.com/
 
-​	2、配置g++：对于Windows，需要下载g++，去github上下载：github.com/nixman/mingw-builds-binaries/releases，找到类似如下的下载即可（可能版本不同）：x86_64-15.2.0-release-win32-seh-msvcrt-rt_v13-rev0.7z，下载好之后将bin文件夹放在系统变量中，可以在powershell中输入G++ - v，有版本信息就可以了；对于MacOS，终端输入g++ -v，如果没有他会提示你下载，直接下载就可以了.
+​	2、配置g++：对于Windows，需要下载g++，去github上下载：github.com/nixman/mingw-builds-binaries/releases，找到类似如下的下载即可（可能版本不同）：x86_64-15.2.0-release-win32-seh-msvcrt-rt_v13-rev0.7z，下载好之后将bin文件夹放在系统变量中，可以在powershell中输入G++ - v，有版本信息就可以了。
 
-​	3、在Sublime中按ctrl+shift+p(Mac是command)，然后搜索pci，大概是package control install这几个英文单词就对了，回车安装，这个时候需要稍微等待一下，安装好会提示弹窗的.
+​	3、在Sublime中按ctrl+shift+p，然后搜索pci，大概是package control install这几个英文单词就对了，回车安装，这个时候需要稍微等待一下，安装好会提示弹窗的.
 
 ​	4、下载fastolympiccoding： 还是ctrl+shift+p，调出来的就是刚才安装好的pci，搜索CppFastOlympicCoding安装就好了，这个好像没什么提示，再去搜索如果搜不到就证明安装好了，或者搜索Package Control: List Packages，可以查看已经安装的插件.
 
@@ -16,7 +18,7 @@
 
 ​	8、右键绿色小按钮，点击选项，在Custom ports输入12345，下面的Request timeout可以选择设置为100.
 
-​	9、如果是MacOS，打开终端，输入：open ~/Library/Application\ Support/Sublime\ Text/Packages/，回车；如果是Windows，在C盘，用户，用户名文件夹下找路径：C:\Users\\[用户名]\AppData\Romaing\Sublime Text\Packages\，其中，AppData文件夹是隐藏的.
+​	9、在C盘，用户，用户名文件夹下找路径：C:\Users\\[用户名]\AppData\Romaing\Sublime Text\Packages\，其中，AppData文件夹是隐藏的.
 
 ​	10、点击如图链接，下载zip，解压后的文件夹移动到上述路径的文件夹下：
 
@@ -38,7 +40,7 @@
 "tests_file_suffix":"__tests"
 ```
 
-​	12、ctrl+shift+p下载：Default File Type，然后需要添加一个文件，位置在：C:\Users\\[用户名]\AppData\Romaing\Sublime Text\Packages\User，如果是MacOS，可以利用第九步中的open方式，也可以在Sublime中左上角Sublime -> settings -> Browse Packages，即可看到User文件夹，就在User文件夹下新建文件，文件名为：default_file_type.sublime-settings，编辑文件如下：
+​	12、ctrl+shift+p下载：Default File Type，然后需要添加一个文件，位置在：C:\Users\\[用户名]\AppData\Romaing\Sublime Text\Packages\User，也可以在Sublime中左上角Sublime -> settings -> Browse Packages，即可看到User文件夹，就在User文件夹下新建文件，文件名为：default_file_type.sublime-settings，编辑文件如下：
 
 ```
 {
@@ -57,9 +59,9 @@
 { "keys": ["ctrl+shift+x"], "command": "fast_olympic_coding_hook" },
 ```
 
-​	15、字体设置：Windows下：https://github.com/tonsky/FiraCode，下载好之后解压，安装；MacOS下：https://github.com/tonsky/FiraCode/releases，下载zip，解压，找到variable_ttf文件夹下的FiraCode-VF.ttf，双击安装即可.
+​	15、字体设置：Windows下：https://github.com/tonsky/FiraCode，下载好之后解压，安装，找到variable_ttf文件夹下的FiraCode-VF.ttf，双击安装即可.
 
-然后在Sublime中找到settings，打开，右侧花括号中加入下面的代码：
+​	然后在Sublime中找到settings，打开，右侧花括号中加入下面的代码：
 
 ```c++
 "font_size": 13,
@@ -76,7 +78,7 @@
 
 ​	保存即可.
 
-​	17、背景板透明度设置：Windows下：还是pci，搜索：Transparency，下载即可；MacOS下：暂时不知如何设置.
+​	17、背景板透明度设置：还是pci，搜索：Transparency，下载即可。
 
 ​	18、模板代码设置：Sublime上方找到Tools -> Developer -> new snippet，进去后页面设置如下：
 
